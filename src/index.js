@@ -1,8 +1,26 @@
 import "./css/style.css";
 
 const menuInterface = (() => {
-  homeBtn = document.querySelector("#home-btn");
-  menuBtn = document.querySelector("#menu-btn");
-  aboutBtn = document.querySelector("#about-btn");
-  orderBtn = document.querySelector("#order-btn");
+  const navBar = document.querySelector("nav");
+  const homeBtn = document.querySelector("#home-btn");
+  const menuBtn = document.querySelector("#menu-btn");
+  const aboutBtn = document.querySelector("#about-btn");
+  const orderBtn = document.querySelector("#order-btn");
+
+  navBar.addEventListener("click", (event) => {
+    switch (event.target) {
+      case homeBtn:
+        console.log(homeBtn);
+        break;
+      case menuBtn:
+        console.log(menuBtn);
+        break;
+      case aboutBtn:
+        console.log(aboutBtn);
+        break;
+      case orderBtn:
+        console.log(orderBtn);
+        break;
+    }
+  });
 })();
