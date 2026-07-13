@@ -167,6 +167,7 @@ header nav {
 
 .nav-btn:hover {
   color: var(--orange-color);
+  background: none;
 }
 
 .nav-btn:focus {
