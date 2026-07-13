@@ -145,6 +145,14 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 1em 2em;
+  position: fixed;
+  width: 100%;
+  background: var(--black-color);
+  background: linear-gradient(
+    180deg,
+    rgba(20, 19, 19, 0.9) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 header .logo {
@@ -183,3 +191,5 @@ header > div:last-child {
 .nav-side-btn {
   width: 7em;
 }
+
+/*  */

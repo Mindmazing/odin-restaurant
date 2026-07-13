@@ -1,4 +1,5 @@
 import "./css/style.css";
+import { displayMenu } from "./js/menu";
 
 const menuInterface = (() => {
   const navBar = document.querySelector("nav");
@@ -11,6 +12,7 @@ const menuInterface = (() => {
     switch (event.target) {
       case homeBtn:
         console.log(homeBtn);
+        displayMenu();
         break;
       case menuBtn:
         console.log(menuBtn);
