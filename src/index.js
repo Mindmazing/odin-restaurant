@@ -1,10 +1,8 @@
 import "./css/style.css";
 
-class userMenuInterface {
-  constructor() {
-    this.homeBtn = document.querySelector("#home-btn");
-    this.menuBtn = document.querySelector("#menu-btn");
-    this.aboutBtn = document.querySelector("#about-btn");
-    this.orderBtn = document.querySelector("#order-btn");
-  }
-}
+const menuInterface = (() => {
+  homeBtn = document.querySelector("#home-btn");
+  menuBtn = document.querySelector("#menu-btn");
+  aboutBtn = document.querySelector("#about-btn");
+  orderBtn = document.querySelector("#order-btn");
+})();
