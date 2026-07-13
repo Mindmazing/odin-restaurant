@@ -1,92 +1,77 @@
-/* Box sizing rules */
+/* 1. Use a more-intuitive box-sizing model */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Prevent font size inflation */
-html {
-  -moz-text-size-adjust: none;
-  -webkit-text-size-adjust: none;
-  text-size-adjust: none;
+/* 2. Remove default margin */
+*:not(dialog) {
+  margin: 0;
 }
 
-/* Remove default margin in favour of better control in authored CSS */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin-block-end: 0;
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core body defaults */
 body {
-  min-height: 100vh;
+  /* 4. Increase line-height */
   line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Set shorter line heights on headings and interactive elements */
-h1,
-h2,
-h3,
-h4,
-button,
-input,
-label {
-  line-height: 1.1;
-}
-
-/* Balance text wrapping on headings */
-h1,
-h2,
-h3,
-h4 {
-  text-wrap: balance;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-  color: currentColor;
-}
-
-/* Make images easier to work with */
+/* 6. Improve media defaults */
 img,
-picture {
-  max-width: 100%;
+picture,
+video,
+canvas,
+svg {
   display: block;
+  max-width: 100%;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* 7. Inherit fonts for form controls */
 input,
 button,
 textarea,
 select {
-  font-family: inherit;
-  font-size: inherit;
+  font: inherit;
 }
 
-/* Make sure textareas without a rows attribute are not tiny */
-textarea:not([rows]) {
-  min-height: 10em;
+/* 8. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
 }
 
-/* Anything that has been anchored to should have extra scroll margin */
-:target {
-  scroll-margin-block: 5ex;
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
 }
 
 @font-face {
@@ -110,10 +95,90 @@ textarea:not([rows]) {
 }
 
 :root {
-  --black-color: #001f3d;
-  --orange-color: #ed985f;
-  --white-color: #e6e6e6;
+  --black-color: #141313;
+  --orange-color: #f3a446;
+  --white-color: #efefef;
+  --gray-color: #1d1d1d;
+  --dark-orange-color: #a06235;
 
   --primary-font: "Butler", sans-serif;
   --secondary-font: "Open Sans", sans-serif;
+}
+
+/* body styles */
+body {
+  background-color: var(--black-color);
+  font-family: var(--secondary-font);
+  color: var(--white-color);
+}
+
+/* button styles */
+button {
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 0.2em;
+  border: none;
+  outline: none;
+  color: var(--gray-color);
+  background-color: var(--orange-color);
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: var(--dark-orange-color);
+}
+
+/* logo style */
+.logo {
+  font-family: var(--primary-font);
+  text-transform: uppercase;
+}
+
+/* header styles */
+header > * {
+  width: calc(100% / 3);
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em 2em;
+}
+
+header .logo {
+  font-size: 2rem;
+}
+
+header nav {
+  display: flex;
+  gap: 2.5em;
+  justify-content: center;
+}
+
+.nav-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  transition: 0.3s;
+  font-weight: normal;
+}
+
+.nav-btn:hover {
+  color: var(--orange-color);
+}
+
+.nav-btn:focus {
+  color: var(--dark-orange-color);
+}
+
+header > div:last-child {
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
+
+.nav-side-btn {
+  width: 7em;
 }
