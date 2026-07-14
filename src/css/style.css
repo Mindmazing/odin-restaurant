@@ -113,6 +113,34 @@ body {
   background-color: var(--black-color);
   font-family: var(--secondary-font);
   color: var(--white-color);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+body > *:nth-child(2) {
+  flex: 1;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--gray-color);
+  padding: 1em 2em;
+}
+
+footer > div:first-child {
+  text-align: center;
+  font-size: 3rem;
+}
+
+footer > div:last-child {
+  text-align: center;
+}
+
+footer > div:last-child a {
+  color: var(--orange-color);
+  text-decoration: none;
 }
 
 /* heading styles */
@@ -259,4 +287,16 @@ header > div:last-child {
 
 .menu-item-details > * {
   flex: 1;
+}
+
+/* about us section */
+.about-us-section {
+  align-items: center;
+  height: 50vh;
+}
+
+.about-us-section p {
+  text-align: center;
+  min-width: none;
+  max-width: 900px;
 }
