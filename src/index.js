@@ -1,5 +1,6 @@
 import "./css/style.css";
 import { displayHome } from "./js/home.js";
+import { displayAbout } from "./js/about.js";
 import { displayMenu } from "./js/menu.js";
 
 const menuInterface = (() => {
@@ -24,7 +25,7 @@ const menuInterface = (() => {
         break;
       case aboutBtn:
         contentContainer.replaceChildren();
-        console.log(aboutBtn);
+        displayAbout(contentContainer);
         break;
     }
   });
