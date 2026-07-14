@@ -12,12 +12,18 @@ export const displayHome = (container) => {
 
   // Customer Favourites
   const favouritesSection = document.createElement("section");
-  favouritesSection.classList.add("favourites-section");
+  const favouritesSectionTitle = document.createElement("h2");
+  favouritesSectionTitle.textContent = "Our Clients Favourites";
 
+  const favouritesSectionMenu = document.createElement("div");
+  favouritesSectionMenu.classList.add("favourites-section-menu");
   // append menu items to favourite section
   menuItems.forEach((menuItem) => {
-    favouritesSection.appendChild(createMenuItemCard(menuItem));
+    favouritesSectionMenu.appendChild(createMenuItemCard(menuItem));
   });
+
+  favouritesSection.appendChild(favouritesSectionTitle);
+  favouritesSection.appendChild(favouritesSectionMenu);
 
   // append to content
   container.appendChild(heroSection);

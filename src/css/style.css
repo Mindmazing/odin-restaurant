@@ -120,8 +120,23 @@ h1 {
   font-size: 5rem;
 }
 /* section styles */
-section {
+section:first-child {
   padding: 1em 2em;
+  display: block;
+  text-align: center;
+}
+
+section {
+  padding: 4em 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 2rem;
 }
 
 /* button styles */
@@ -214,7 +229,7 @@ header > div:last-child {
 }
 
 /* favourites section */
-.favourites-section {
+.favourites-section-menu {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em;
