@@ -212,22 +212,30 @@ header > div:last-child {
 .hero-section h1 {
   margin-top: 3em;
 }
-.favorites-section {
+
+/* favourites section */
+.favourites-section {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1em;
 }
 
 /* Food Card */
 .menu-item-container {
   background-color: var(--gray-color);
-  border: 0.2em;
+  border-radius: 0.2em;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
+  padding: 1em;
+  gap: 1.5em;
+  transition: 0.3s;
 }
 
-.menu-item-container h3 {
-  text-align: center;
+.menu-item-container:hover {
+  background-color: var(--orange-color);
+  color: var(--black-color);
 }
 
 .menu-item-details {

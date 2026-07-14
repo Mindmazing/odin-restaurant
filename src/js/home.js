@@ -6,14 +6,20 @@ export const displayHome = (container) => {
   // hero section
   const heroSection = document.createElement("section");
   heroSection.classList.add("hero-section");
-
   const heroTitle = document.createElement("h1");
   heroTitle.textContent = "The Flavor of Tradition";
-
   heroSection.appendChild(heroTitle);
+
   // Customer Favourites
   const favouritesSection = document.createElement("section");
+  favouritesSection.classList.add("favourites-section");
+
+  // append menu items to favourite section
+  menuItems.forEach((menuItem) => {
+    favouritesSection.appendChild(createMenuItemCard(menuItem));
+  });
 
   // append to content
   container.appendChild(heroSection);
+  container.appendChild(favouritesSection);
 };
