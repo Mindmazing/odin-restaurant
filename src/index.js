@@ -13,15 +13,17 @@ const menuInterface = (() => {
   displayHome(contentContainer);
 
   navBar.addEventListener("click", (event) => {
-    contentContainer.replaceChildren();
     switch (event.target) {
       case homeBtn:
+        contentContainer.replaceChildren();
         displayHome(contentContainer);
         break;
       case menuBtn:
+        contentContainer.replaceChildren();
         displayMenu(contentContainer);
         break;
       case aboutBtn:
+        contentContainer.replaceChildren();
         console.log(aboutBtn);
         break;
     }
