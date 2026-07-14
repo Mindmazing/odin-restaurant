@@ -1,3 +1,5 @@
+import { menuItems, createMenuItemCard } from "./menu-items.js";
+
 const contentContainer = document.querySelector("#content");
 
 export const displayHome = (container) => {

@@ -119,6 +119,10 @@ body {
 h1 {
   font-size: 5rem;
 }
+/* section styles */
+section {
+  padding: 1em 2em;
+}
 
 /* button styles */
 button {
@@ -203,7 +207,6 @@ header > div:last-child {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
-  padding: 1em 2em;
 }
 
 .hero-section h1 {
@@ -211,4 +214,26 @@ header > div:last-child {
 }
 .favorites-section {
   display: grid;
+}
+
+/* Food Card */
+.menu-item-container {
+  background-color: var(--gray-color);
+  border: 0.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.menu-item-container h3 {
+  text-align: center;
+}
+
+.menu-item-details {
+  display: flex;
+}
+
+.menu-item-details > * {
+  flex: 1;
 }
